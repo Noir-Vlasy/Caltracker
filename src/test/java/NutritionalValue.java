@@ -1,5 +1,8 @@
+import lombok.Getter;
+
 import java.util.Objects;
 
+@Getter
 public final class NutritionalValue {
 
     private final double calories;
@@ -51,22 +54,6 @@ public final class NutritionalValue {
                 this.carbs + other.carbs,
                 this.fat + other.fat
         );
-    }
-
-    public double getCalories() {
-        return calories;
-    }
-
-    public double getProtein() {
-        return protein;
-    }
-
-    public double getCarbs() {
-        return carbs;
-    }
-
-    public double getFat() {
-        return fat;
     }
 
     private static void validate(double value, String fieldName) {
