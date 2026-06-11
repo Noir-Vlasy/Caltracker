@@ -33,7 +33,9 @@ public class DailyLog {
         if (entry == null) {
             throw new IllegalArgumentException("Entry to be removed Cannot be NULL value");
         }
-        foodEntries.remove(entry);
+        if (!foodEntries.remove(entry)) {
+            throw new IllegalArgumentException("Entry not found in log");
+        }
     }
 
     public List<FoodEntry> getEntries() {
